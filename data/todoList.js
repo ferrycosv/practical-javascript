@@ -6,15 +6,32 @@ const todoList = {
       completed: false
     });
   },
-  changeTodo: function(position,todoText){
+  changeTodo: function(position, todoText) {
     this.todos[position].todoText = todoText;
   },
   deleteTodo: function(position) {
-    this.todos.splice(position,1);
+    this.todos.splice(position, 1);
   },
   toggleCompleted: function(position) {
     let todo = this.todos[position];
     todo.completed = !todo.completed;
+  },
+  toggleAll: function() {
+    let toggle = false;
+    this.todos.forEach(element => {
+      if (!element.completed) {
+        toggle = true;
+      }
+    });
+    if (toggle) {
+      this.todos.forEach(element => {
+        element.completed = true;
+      });
+    } else {
+      this.todos.forEach(element => {
+        element.completed = false;
+      });
+    }
   },
   displayTodos: function() {
     let i = 0;

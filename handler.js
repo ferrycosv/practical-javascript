@@ -56,5 +56,14 @@ var handler = {
       handler: "toggleTodo",
       todoList: JSON.parse(JSON.stringify(todoList))
     });
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+    todoList.displayTodos();
+    // log the user input
+    log.push({
+      handler: "toggleAll",
+      todoList: JSON.parse(JSON.stringify(todoList))
+    });
   }
 };
