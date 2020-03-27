@@ -46,5 +46,15 @@ var handler = {
       handler: "deleteTodo",
       todoList: JSON.parse(JSON.stringify(todoList))
     });
+  },
+  toggleTodo: function(event) {
+    const position = Number(event.target.getAttribute("data-position"));
+    todoList.toggleCompleted(position);
+    todoList.displayTodos();
+    // log the user input
+    log.push({
+      handler: "toggleTodo",
+      todoList: JSON.parse(JSON.stringify(todoList))
+    });
   }
 };

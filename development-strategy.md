@@ -38,3 +38,9 @@ Building this site one step at a time
 - A user can delete a TODO task directly on the list by clicking X icon on the selected task
 - I wrote the code in `data/todoList.js` and `handler.js`
 - The handler function deletes from the `todoList` object task selected by clicking the corresponding X icon, and renders the updated list to the screen. The handler is connected to the UI with a `click` event.
+
+## 5. User Story: `Toggle completed todo`
+
+- A user can check or un-check a TODO task directly on the list by clicking V icon on the selected task
+- I wrote the code in `data/todoList.js` and `handler.js`
+- The handler function toggles the completed attribute from the `todoList` object task selected by clicking the corresponding V icon, and renders the updated list to the screen. The handler is connected to the UI with a `click` event.

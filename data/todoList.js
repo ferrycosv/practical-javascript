@@ -12,6 +12,10 @@ const todoList = {
   deleteTodo: function(position) {
     this.todos.splice(position,1);
   },
+  toggleCompleted: function(position) {
+    let todo = this.todos[position];
+    todo.completed = !todo.completed;
+  },
   displayTodos: function() {
     let i = 0;
     const parent = document.getElementById("todoDiv");
@@ -29,6 +33,7 @@ const todoList = {
         checkTodo.className = "fa fa-check-circle gray";
       }
       checkTodo.setAttribute("data-position", i);
+      checkTodo.setAttribute("onclick", "handler.toggleTodo(event)");
       listTodo.appendChild(checkTodo);
       // input field
       const inputTodo = document.createElement("input");
