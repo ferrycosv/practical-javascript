@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="./data/todoList.js"></script>
     <script src="./log.js"></script>
+    <script src="./handler.js"></script>
   </head>
   <body>
     <div id="todoDiv" class="todoInput">
@@ -16,7 +17,7 @@
         ><input
           type="text"
           placeholder="What needs to be done?"
-          onkeyup="todoList.addTodo(event)"
+          onkeyup="handler.addTodo(event)"
         />
       </div>
     </div>

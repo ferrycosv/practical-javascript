@@ -12,11 +12,6 @@ body {
   box-sizing: inherit;
 }
 
-/*input {
-  width: 100%;
-  padding: 20px;
-}*/
-
 .todoInput {
   max-width: 600px;
   margin: 50px auto;
@@ -40,7 +35,7 @@ body {
 .todolist {
   margin: auto;
   margin-bottom: 5px;
-  padding: 3px;
+  padding: 6px;
   display: flex;
   max-width: 450px;
   background-color: white;
@@ -54,6 +49,7 @@ body {
   font-size: 20px;
   padding: 0;
   border: none;
+  border-radius: 3px;
 }
 
 .todolist .fa {
