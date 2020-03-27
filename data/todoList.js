@@ -9,6 +9,9 @@ const todoList = {
   changeTodo: function(position,todoText){
     this.todos[position].todoText = todoText;
   },
+  deleteTodo: function(position) {
+    this.todos.splice(position,1);
+  },
   displayTodos: function() {
     let i = 0;
     const parent = document.getElementById("todoDiv");
@@ -18,6 +21,7 @@ const todoList = {
     this.todos.forEach(element => {
       const listTodo = document.createElement("div");
       listTodo.className = "todolist";
+      // check icon
       const checkTodo = document.createElement("i");
       if (element.completed) {
         checkTodo.className = "fa fa-check-circle";
@@ -26,6 +30,7 @@ const todoList = {
       }
       checkTodo.setAttribute("data-position", i);
       listTodo.appendChild(checkTodo);
+      // input field
       const inputTodo = document.createElement("input");
       inputTodo.type = "text";
       inputTodo.value = element.todoText;
@@ -33,6 +38,13 @@ const todoList = {
       inputTodo.setAttribute("onkeyup", "handler.changeTodo(event)");
       inputTodo.setAttribute("onchange", "handler.saveChanges(event)");
       listTodo.appendChild(inputTodo);
+      // delete icon
+      const deleteTodo = document.createElement("i");
+      deleteTodo.className = "fa fa-times red";
+      deleteTodo.setAttribute("data-position", i);
+      deleteTodo.setAttribute("onclick", "handler.deleteTodo(event)");
+      listTodo.appendChild(deleteTodo);
+      // append to parent
       parent.appendChild(listTodo);
       i++;
     });

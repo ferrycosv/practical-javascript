@@ -11,14 +11,30 @@ Building this site one step at a time
 
 ---
 
-## 2. Data & Log
+## 1. Data & Log
 
 - `data/todoList.js` & `log.js`
 
 ---
 
-## 3. User Story: `Add todo`
+## 2. User Story: `Add todo`
 
 - A user can add a new TODO task to the list by typing the new task and pressing enter
 - I wrote the code in `data/todoList.js`
 - The handler function stores in the `todoList` object the new task typed in the input field, and renders the list to the screen. The handler is connected to the UI with a `keydown` for `Enter` event.
+
+---
+
+## 3. User Story: `Change todo`
+
+- A user can change the text of a TODO task directly on the list by typing the new task and pressing enter
+- I wrote the code in `data/todoList.js` and `handler.js`
+- The handler function stores in the `todoList` object the new value of the task changed in the input field, and renders the list to the screen. The handler is connected to the UI with a `keydown` for `Enter` event and `onchange` event in case they are pending changes to save.
+
+---
+
+## 4. User Story: `Delete todo`
+
+- A user can delete a TODO task directly on the list by clicking X icon on the selected task
+- I wrote the code in `data/todoList.js` and `handler.js`
+- The handler function deletes from the `todoList` object task selected by clicking the corresponding X icon, and renders the updated list to the screen. The handler is connected to the UI with a `click` event.

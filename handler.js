@@ -7,7 +7,7 @@ var handler = {
       // log the user input
       log.push({
         handler: "addTodo",
-        todoList: JSON.parse(JSON.stringify(this))
+        todoList: JSON.parse(JSON.stringify(todoList))
       });
     }
   },
@@ -19,7 +19,7 @@ var handler = {
       // log the user input
       log.push({
         handler: "changeTodo",
-        todoList: JSON.parse(JSON.stringify(this))
+        todoList: JSON.parse(JSON.stringify(todoList))
       });
     }
   },
@@ -32,7 +32,19 @@ var handler = {
     // log the user input
     log.push({
       handler: "changeTodo",
-      todoList: JSON.parse(JSON.stringify(this))
+      todoList: JSON.parse(JSON.stringify(todoList))
+    });
+  },
+  deleteTodo: function(event) {
+    if (confirm("Do you want to delete the task?")) {
+      const position = Number(event.target.getAttribute("data-position"));
+      todoList.deleteTodo(position);
+    }
+    todoList.displayTodos();
+    // log the user input
+    log.push({
+      handler: "deleteTodo",
+      todoList: JSON.parse(JSON.stringify(todoList))
     });
   }
 };
