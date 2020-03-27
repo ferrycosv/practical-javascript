@@ -64,6 +64,15 @@ body {
   text-align: center;
 }
 
+.fa:hover {
+	transition: all 0.65s;
+    transform: rotateY(360deg);
+  }
+
 .gray {
   color: grey;
+}
+
+.red {
+    color: red;
 }
